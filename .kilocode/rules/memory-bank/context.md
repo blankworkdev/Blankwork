@@ -14,7 +14,9 @@ The template is a clean Next.js 16 starter with TypeScript and Tailwind CSS 4. I
 - [x] ESLint configuration
 - [x] Memory bank documentation
 - [x] Recipe system for common features
-- [x] Database support with Drizzle ORM and SQLite (users table with Solana address)
+- [x] Database support with Drizzle ORM and SQLite (users, tasks, submissions tables)
+- [x] Authentication with NextAuth.js (Twitter and Email login)
+- [x] Solana wallet integration with wallet adapter
 
 ## Current Structure
 

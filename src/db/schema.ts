@@ -35,3 +35,22 @@ export const verificationtoken = sqliteTable("verificationtoken", {
   token: text("token").notNull(),
   expires: integer("expires", { mode: "timestamp" }).notNull(),
 });
+
+export const task = sqliteTable("task", {
+  id: text("id").primaryKey(),
+  title: text("title").notNull(),
+  description: text("description").notNull(),
+  reward: integer("reward").notNull(), // in lamports or something
+  creatorId: text("creatorId").notNull(),
+  status: text("status").notNull().default("open"), // open, assigned, completed, paid
+  createdAt: integer("createdAt", { mode: "timestamp" }).$defaultFn(() => new Date()),
+});
+
+export const submission = sqliteTable("submission", {
+  id: text("id").primaryKey(),
+  taskId: text("taskId").notNull(),
+  workerId: text("workerId").notNull(),
+  solanaAddress: text("solanaAddress").notNull(),
+  status: text("status").notNull().default("pending"), // pending, approved, rejected
+  createdAt: integer("createdAt", { mode: "timestamp" }).$defaultFn(() => new Date()),
+});

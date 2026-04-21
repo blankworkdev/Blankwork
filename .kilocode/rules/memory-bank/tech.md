@@ -61,7 +61,11 @@ bun typecheck      # Run TypeScript type checking
   "react": "^19.2.3", // UI library
   "react-dom": "^19.2.3", // React DOM
   "drizzle-orm": "^0.45.2", // ORM for database operations
-  "@kilocode/app-builder-db": "github:Kilo-Org/app-builder-db#main" // Database client
+  "@kilocode/app-builder-db": "github:Kilo-Org/app-builder-db#main", // Database client
+  "next-auth": "^4.24.14", // Authentication library
+  "@solana/web3.js": "^1.98.4", // Solana blockchain library
+  "@solana/wallet-adapter-react": "^0.15.39", // Solana wallet adapter for React
+  "@solana/wallet-adapter-react-ui": "^0.9.39" // Wallet UI components
 }
 ```
 

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { NextAuthProvider } from "@/components/providers/NextAuthProvider";
+import { WalletProvider } from "@/components/providers/WalletProvider";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -21,7 +23,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${spaceGrotesk.variable} antialiased`}>{children}</body>
+      <body className={`${spaceGrotesk.variable} antialiased`}>
+        <NextAuthProvider>
+          <WalletProvider>{children}</WalletProvider>
+        </NextAuthProvider>
+      </body>
     </html>
   );
 }
