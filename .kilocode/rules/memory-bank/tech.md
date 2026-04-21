@@ -59,7 +59,9 @@ bun typecheck      # Run TypeScript type checking
 {
   "next": "^16.1.3", // Framework
   "react": "^19.2.3", // UI library
-  "react-dom": "^19.2.3" // React DOM
+  "react-dom": "^19.2.3", // React DOM
+  "drizzle-orm": "^0.45.2", // ORM for database operations
+  "@kilocode/app-builder-db": "github:Kilo-Org/app-builder-db#main" // Database client
 }
 ```
 
@@ -92,11 +94,16 @@ bun typecheck      # Run TypeScript type checking
 ├── public/                 # Static assets
 │   └── .gitkeep
 └── src/                    # Source code
-    └── app/                # Next.js App Router
-        ├── layout.tsx      # Root layout
-        ├── page.tsx        # Home page
-        ├── globals.css     # Global styles
-        └── favicon.ico     # Site icon
+    ├── app/                # Next.js App Router
+    │   ├── layout.tsx      # Root layout
+    │   ├── page.tsx        # Home page
+    │   ├── globals.css     # Global styles
+    │   └── favicon.ico     # Site icon
+    └── db/                 # Database files
+        ├── index.ts        # Database client
+        ├── schema.ts       # Table definitions
+        ├── migrate.ts      # Migration script
+        └── migrations/     # Generated migrations
 ```
 
 ## Technical Constraints
